@@ -1,12 +1,15 @@
 import { useState } from "react";
-import RegisterUi from "./ui";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import { signInUser } from "../../utils/firebase";
+import RegisterUi from "./ui";
+
+import { signInUser } from "../../utils/firebase/signIn";
 
 export const Register = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleNavigation = (path: string) => {
     navigate(path);
@@ -25,7 +28,7 @@ export const Register = () => {
         formData.password,
       );
       if (userCredential) {
-        // const uid = userCredential.user.uid;
+        dispatch({ type: "SET_USER", payload: userCredential.user.uid });
         alert("Usuário criado com sucesso!");
         handleNavigation("/upload-photos");
       }

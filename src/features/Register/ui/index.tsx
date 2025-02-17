@@ -17,25 +17,22 @@ const RegisterUi: React.FC<RegisterUiProps> = ({
 }) => {
   return (
     <Container>
+      <Text variant={TextSize.title}>Criar conta</Text>
       <form onSubmit={onSubmit}>
-        <div>
-          <Text variant={TextSize.body}>Email</Text>
-          <Input
-            type="text"
-            name="email"
-            value={formData.email}
-            onChange={onInputChange}
-          />
-        </div>
-        <div>
-          <Text variant={TextSize.body}>Senha</Text>
-          <Input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={onInputChange}
-          />
-        </div>
+        <Text variant={TextSize.body}>Email</Text>
+        <Input
+          type="text"
+          name="email"
+          value={formData.email}
+          onChange={onInputChange}
+        />
+        <Text variant={TextSize.body}>Senha</Text>
+        <Input
+          type="password"
+          name="password"
+          value={formData.password}
+          onChange={onInputChange}
+        />
         <Button type="submit">Criar conta</Button>
       </form>
     </Container>
