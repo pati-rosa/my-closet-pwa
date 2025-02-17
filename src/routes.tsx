@@ -6,7 +6,7 @@ import { ConfigAccount } from "./features/ConfigAccount";
 
 export const AppRoutes = () => {
   return (
-    <Router>
+    <Router basename="/my-closet-pwa/">
       <Routes>
         <Route path="/" element={<Register />} />
         <Route path="/upload-photos" element={<UploadPhotos />} />
