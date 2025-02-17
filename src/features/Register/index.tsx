@@ -1,5 +1,5 @@
 import { useState } from "react";
-import RegisterUi from "./ui/ui";
+import RegisterUi from "./ui";
 import { useNavigate } from "react-router-dom";
 
 import { signInUser } from "../../utils/firebase";
